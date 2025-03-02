@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Purple Wellness Chat</title>
+<style>
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #E1BEE7, #CE93D8);
+}
+
+#chat-container {
+  width: 400px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #BA68C8;
+}
+
+#chat-log {
+  flex-grow: 1;
+  padding: 25px;
+  overflow-y: auto;
+  border-bottom: 2px solid #D1C4E9;
+}
+
+.message {
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 30px;
+  display: inline-block;
+  max-width: 75%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.user-message {
+  background: linear-gradient(to right, #B39DDB, #9575CD);
+  color: white;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background: linear-gradient(to right, #EDE7F6, #D1C4E9);
+  color: #4A148C;
+  align-self: flex-start;
+}
+
+#input-container {
+  display: flex;
+  padding: 18px;
+  background-color: #F3E5F5;
+  border-top: 2px solid #D1C4E9;
+}
+
+#user-input {
+  flex-grow: 1;
+  padding: 14px;
+  border: 1px solid #BA68C8;
+  border-radius: 30px;
+  margin-right: 12px;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+#send-button {
+  padding: 14px 30px;
+  background: linear-gradient(to right, #AB47BC, #9C27B0);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#send-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+#quick-replies {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background-color: #F8E0F8;
+  border-top: 2px solid #E0BBE7;
+}
+
+.quick-reply-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, #8E24AA, #6A1B9A);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quick-reply-button:hover {
+  background: linear-gradient(to right, #7B1FA2, #4A148C);
+}
+</style>
+</head>
+<body>
+
+<div id="chat-container">
+  <div id="chat-log">
+    <div class="message bot-message">Hello, I'm here to support you. How can I help today?</div>
+  </div>
+  <div id="quick-replies">
+    <button class="quick-reply-button" onclick="reply('I feel lonely.')">I feel lonely.</button>
+    <button class="quick-reply-button" onclick="reply('Give me a motivational quote.')">Motivational quote?</button>
+    <button class="quick-reply-button" onclick="reply('How to manage stress?')">Manage stress?</button>
+    <button class="quick-reply-button" onclick="reply('I need to vent.')">I need to vent.</button>
+    <button class="quick-reply-button" onclick="reply('What are some relaxation techniques?')">Relaxation techniques?</button>
+  </div>
+  <div id="input-container">
+    <input type="text" id="user-input" placeholder="Type your thoughts...">
+    <button id="send-button" onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+function reply(message) {
+  const chatLog = document.getElementById('chat-log');
+  const userMessageDiv = document.createElement('div');
+  userMessageDiv.className = 'message user-message';
+  userMessageDiv.textContent = message;
+  chatLog.appendChild(userMessageDiv);
+
+  let botResponse = '';
+  if (message === 'I feel lonely.') {
+    botResponse = "Loneliness can be tough. Remember, you're not alone. Try connecting with friends or family, or exploring new hobbies.";
+  } else if (message === 'Give me a motivational quote.') {
+    botResponse = "\"The only way to do great work is to love what you do.\" - Steve Jobs";
+  } else if (message === 'How to manage stress?') {
+    botResponse = "Try deep breathing, meditation, or engaging in physical activity. Regular breaks and a healthy diet also help.";
+  } else if (message === 'I need to vent.') {
+    botResponse = "Go ahead, I'm listening. Share whatever is on your mind.";
+  } else if (message === 'What are some relaxation techniques?') {
+    botResponse = "Deep breathing, progressive muscle relaxation, and mindfulness meditation are effective techniques.";
+  }
+  const botMessageDiv = document.createElement('div');
+  botMessageDiv.className = 'message bot-message';
+  botMessageDiv.textContent = botResponse;
+  chatLog.appendChild(botMessageDiv);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+function sendMessage() {
+    const chatLog = document.getElementById('chat-log');
+    const userInput = document.getElementById('user-input');
+    const message = userInput.value.trim();
+
+    if (message) {
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'message user-message';
+        userMessageDiv.textContent = message;
+        chatLog.appendChild(userMessageDiv);
+        userInput.value = '';
+
+        let botResponse = "I'm listening. Please feel free to share whatever is on your mind.";
+
+        const botMessageDiv = document.createElement('div');
+        botMessageDiv.className = 'message bot-message';
+        botMessageDiv.textContent = botResponse;
+        chatLog.appendChild(botMessageDiv);
+        chatLog.scrollTop = chatLog.scrollHeight;
+
+    }
+}
+</script>
+
+</body>
+</html>
