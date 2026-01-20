@@ -1,0 +1,16 @@
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int gs,hra,da,pf,net;
+        System.out.println("Enter Gross Value");
+        gs=scan.nextInt();
+        
+        hra=gs*15/100;
+        da=gs*7/100;
+        pf=gs*5/100;
+        
+        net=(gs+hra+da)-pf;
+        System.out.println(net);
+    }
+}
