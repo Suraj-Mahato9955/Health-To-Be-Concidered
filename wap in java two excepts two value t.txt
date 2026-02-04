@@ -1,0 +1,173 @@
+wap in java two excepts two value to swap the number.
+wap in java to accept a number and check is that program is even or odd.
+
+import java.util.Scanner;
+
+public class EvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num;
+
+
+        System.out.print("Enter a number: ");
+        num = sc.nextInt();
+
+        if (num % 2 == 0) {
+            System.out.println(num + " is Even");
+        } 
+        else {
+            System.out.println(num + " is Odd");
+        }
+
+        
+    }
+}
+
+wap in java to accept a number and check is it positive or ngative.
+
+wap in java to accept three numbers and check which one is greater.
+
+import java.util.Scanner;
+
+public class EvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a,b,c;
+        System.out.print("Enter a first number: ");
+        a = sc.nextInt();
+        
+        System.out.print("Enter a second number: ");
+        b = sc.nextInt();
+        
+        System.out.print("Enter a third number: ");
+        c = sc.nextInt();
+       
+        if (a > b && a > c) {
+            System.out.println(a + " is the greatest number");
+        } 
+        else if (b>a && b>c) {
+            System.out.println(b + "is the greatest number");
+        } 
+        else if (c > b && c > a) {
+            System.out.println(c + " is the greatest number");
+        } 
+        else {
+            System.out.println("All three numbers are equal or two numbers are equal and greatest");
+        }
+
+        
+    }
+}
+ 
+wap in java to accept year and check is it leap year or not.
+
+import java.util.Scanner;
+
+class LeapYear {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a year: ");
+        int year = sc.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " is a Leap Year");
+        } else {
+            System.out.println(year + " is NOT a Leap Year");
+        }
+
+        
+    }
+}
+
+
+wap in java to accept a character is it alphabet or a special character.
+
+wap  to accept lenghth breadth and height of a triangle or not.
+
+wap  in java to calculate electricity bill based on the following ondition 1-for the first 100 unit charge 1.5. 2-for the next 100 unit charge 2.5 ruppes per unit. 3-for units above 200 charge 4 ruppes per unit. calculate and print the total electricity bill payable.
+
+wap in java to accept n element in array find out the total count of even and odd number.
+
+import java.util.Scanner;
+
+public class EvenOddCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+       
+        System.out.print("Enter the number of elements in the array: ");
+        int n = scanner.nextInt();
+
+       
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            System.out.print("Element " + (i + 1) + ": ");
+            numbers[i] = scanner.nextInt();
+        }
+
+        int evenCount = 0;
+        int oddCount = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (numbers[i] % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+
+        System.out.println("\n--- Results ---");
+        System.out.println("Total even numbers: " + evenCount);
+        System.out.println("Total odd numbers: " + oddCount);
+
+        scanner.close();
+    }
+}
+
+
+
+wap in java to accept n number in array and accept in key and search is that the key element is present or not and if it is present then in which index.
+
+import java.util.Scanner;
+
+public class SearchElement {
+    public static void main(String[] args) {
+        int n, key, index = -1; 
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements you want in the array: ");
+        n = s.nextInt();
+        int[] a = new int[n];
+
+        System.out.println("Enter all the elements:");
+        for (int i = 0; i < n; i++) {
+            a[i] = s.nextInt();
+        }
+
+        System.out.print("Enter the element you want to find: ");
+        key = s.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            if (a[i] == key) {
+                index = i; // If found, store the index (position, zero-based)
+                break;     // Exit the loop once the element is found
+            }
+        }
+
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index: " + index);
+            System.out.println("Element " + key + " found at position: " + (index + 1)); // Position is 1-based
+        } else {
+            System.out.println("Element " + key + " not found in the array.");
+        }
+        
+        s.close(); 
+    }
+}
+
+
+
+
