@@ -1,5 +1,4 @@
-wap in java two excepts two value to swap the number.
-wap in java to accept a number and check is that program is even or odd.
+Q. wap in java to accept a number and check is that program is even or odd.
 
 import java.util.Scanner;
 
@@ -23,9 +22,8 @@ public class EvenOdd {
     }
 }
 
-wap in java to accept a number and check is it positive or ngative.
 
-wap in java to accept three numbers and check which one is greater.
+Q. wap in java to accept three numbers and check which one is greater.
 
 import java.util.Scanner;
 
@@ -81,13 +79,7 @@ class LeapYear {
 }
 
 
-wap in java to accept a character is it alphabet or a special character.
-
-wap  to accept lenghth breadth and height of a triangle or not.
-
-wap  in java to calculate electricity bill based on the following ondition 1-for the first 100 unit charge 1.5. 2-for the next 100 unit charge 2.5 ruppes per unit. 3-for units above 200 charge 4 ruppes per unit. calculate and print the total electricity bill payable.
-
-wap in java to accept n element in array find out the total count of even and odd number.
+Q. wap in java to accept n element in array find out the total count of even and odd number.
 
 import java.util.Scanner;
 
@@ -129,7 +121,7 @@ public class EvenOddCounter {
 
 
 
-wap in java to accept n number in array and accept in key and search is that the key element is present or not and if it is present then in which index.
+Q. wap in java to accept n number in array and accept in key and search is that the key element is present or not and if it is present then in which index.
 
 import java.util.Scanner;
 
@@ -167,6 +159,7 @@ public class SearchElement {
         s.close(); 
     }
 }
+
 
 
 
