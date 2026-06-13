@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suraj Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .clock-container {
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #clock {
+            font-size: 60px;
+            font-weight: bold;
+            padding: 20px 40px;
+            border: 3px solid white;
+            border-radius: 10px;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock-container">
+        <h1>Suraj Clock</h1>
+        <div id="clock">00:00:00</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            let now = new Date();
+
+            let hours = String(now.getHours()).padStart(2, '0');
+            let minutes = String(now.getMinutes()).padStart(2, '0');
+            let seconds = String(now.getSeconds()).padStart(2, '0');
+
+            document.getElementById("clock").innerHTML =
+                `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>
