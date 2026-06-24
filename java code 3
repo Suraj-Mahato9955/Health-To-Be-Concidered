@@ -1,11 +1,14 @@
 class Main {
     public static void main(String[] args) {
-        int sum,m1,m2; 
+        int sum,m1,m2,sub; 
         m1=56;
         m2=78;
         
         sum=m1+m2;
+        sub=m1-m2;
         
         System.out.println("sum of m1 \t"+ m1 +"and"+ m2 +"is"+ sum);
+        System.out.println("sub of m1 \t"+ m1 +"and"+ m2 +"is"+ sub);
+
     }
 }
